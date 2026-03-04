@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Saarang Govinda Rajan — Analyst · SDET · Data Scientist</title>
+<meta name="description" content="Saarang Govinda Rajan — Quantitative Technologist. MSIS @ UW–Madison."/>
+<meta property="og:title" content="Saarang Govinda Rajan — Analyst · SDET · Data Scientist"/>
+<meta property="og:url" content="https://capsaarang.github.io/myportfolio"/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://capsaarang.github.io/myportfolio"/>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0E00C2C3T6"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0E00C2C3T6');</script>
+
+<!-- Fonts async — never block rendering -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+
+<style>
+:root{--accent:#0EA5E9;--accent-light:#38BDF8;--accent-pale:#BAE6FD;--accent-glow:rgba(14,165,233,0.14);--accent-shadow:rgba(14,165,233,0.36);}
+[data-theme="dark"]{--bg:#090E14;--bg2:#0F1A24;--bg3:#162232;--bg4:#1D2E40;--border:rgba(14,165,233,0.12);--text:#E8F4FD;--muted:#7FA8C4;--dim:#3E6280;}
+[data-theme="light"]{--bg:#F0F8FF;--bg2:#E1F0FB;--bg3:#CDDFF0;--bg4:#BAD1E6;--border:rgba(14,165,233,0.2);--text:#0A1E2E;--muted:#3D6880;--dim:#7AAAC8;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;transition:background .45s,color .45s}
+
+/* LOADER */
+#loader{position:fixed;inset:0;z-index:9999;background:#090E14;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .6s,visibility .6s}
+#loader.off{opacity:0;visibility:hidden;pointer-events:none}
+.l-name{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,5vw,3rem);font-weight:900;color:#0EA5E9;letter-spacing:-1px;text-align:center;line-height:1.2}
+.l-sub{font-family:monospace;font-size:.7rem;letter-spacing:2px;color:#3E6280;text-align:center;margin-top:4px}
+.l-track{width:180px;height:2px;background:#1a2a3a;margin-top:8px}
+.l-fill{height:100%;background:#0EA5E9;width:0%}
+.l-pct{font-family:monospace;font-size:.68rem;letter-spacing:2px;color:#3E6280}
+
+/* MODE TOGGLE */
+#modeToggle{position:fixed;top:50%;right:20px;transform:translateY(-50%);z-index:200;width:44px;height:88px;background:var(--bg2);border:1px solid var(--border);border-radius:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;transition:background .45s,border-color .45s,box-shadow .3s;box-shadow:0 4px 20px rgba(14,165,233,0.15)}
+#modeToggle:hover{box-shadow:0 6px 28px rgba(14,165,233,0.3)}
+.t-icon{font-size:1.1rem;transition:opacity .3s,transform .3s}
+.t-sun{opacity:0;transform:scale(.6)}
+.t-moon{opacity:1;transform:scale(1)}
+[data-theme="light"] .t-sun{opacity:1;transform:scale(1)}
+[data-theme="light"] .t-moon{opacity:0;transform:scale(.6)}
+.t-line{width:1px;height:12px;background:var(--border)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.85rem 5%;border-bottom:1px solid var(--border);backdrop-filter:blur(22px);transform:translateY(-100%);animation:slideDown .6s 1.9s ease forwards;transition:background .45s,border-color .45s}
+[data-theme="dark"] nav{background:rgba(9,14,20,.84)}
+[data-theme="light"] nav{background:rgba(240,248,255,.9)}
+@keyframes slideDown{to{transform:translateY(0)}}
+.nav-left{display:flex;flex-direction:column;gap:3px}
+.nav-edu{font-family:monospace;font-size:.6rem;letter-spacing:.5px;color:var(--dim)}
+.nav-edu span{color:var(--muted)}
+.nav-status{display:flex;align-items:center;gap:7px;font-family:monospace;font-size:.7rem;font-weight:500;color:var(--accent);letter-spacing:.4px;flex-wrap:wrap}
+.ndot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 2s infinite;box-shadow:0 0 6px var(--accent);flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.nav-sep{color:var(--dim);margin:0 4px}
+.nav-links{display:flex;gap:1.4rem;list-style:none;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.78rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* RESUME DROPDOWN */
+.resume-dropdown{position:relative}
+.resume-btn{background:var(--accent);color:#fff;border:none;padding:7px 16px;border-radius:100px;font-size:.76rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .2s,box-shadow .2s;font-family:'DM Sans',sans-serif;box-shadow:0 3px 12px var(--accent-shadow)}
+.resume-btn:hover{background:var(--accent-light)}
+.resume-btn svg{transition:transform .2s}
+.resume-dropdown.open .resume-btn svg{transform:rotate(180deg)}
+.resume-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:200px;display:none;flex-direction:column;gap:2px;box-shadow:0 12px 32px rgba(0,0,0,.3);z-index:300}
+.resume-dropdown.open .resume-menu{display:flex}
+.resume-menu a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--text);font-size:.8rem;font-weight:500;transition:background .2s}
+.resume-menu a:hover{background:var(--accent-glow);color:var(--accent)}
+.resume-menu a span{font-size:.68rem;color:var(--dim);font-family:monospace;letter-spacing:.5px}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:6rem 5% 4rem;position:relative;overflow:hidden}
+.h-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 60% 55% at 82% 40%,var(--accent-glow),transparent 68%),radial-gradient(ellipse 40% 40% at 18% 80%,rgba(14,165,233,.07),transparent 68%);transition:background .45s}
+.h-grid{position:absolute;inset:0;z-index:0;opacity:.025;background-image:linear-gradient(var(--accent) 1px,transparent 1px),linear-gradient(90deg,var(--accent) 1px,transparent 1px);background-size:56px 56px}
+[data-theme="light"] .h-grid{opacity:.06}
+.h-inner{position:relative;z-index:1;max-width:900px}
+.h-badges{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:2rem;opacity:0;animation:fadeUp .7s 2.1s ease forwards}
+.badge{display:inline-flex;align-items:center;gap:7px;border-radius:100px;padding:7px 18px;font-size:.76rem;font-weight:600;letter-spacing:.4px}
+.badge-fill{background:var(--accent);color:#fff;box-shadow:0 4px 20px var(--accent-shadow)}
+.badge-ring{background:var(--accent-glow);border:1.5px solid var(--accent);color:var(--accent)}
+.badge-loc{background:transparent;border:1.5px solid var(--border);color:var(--muted)}
+.bdot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:blink 2s infinite}
+.h-name{font-family:'Playfair Display',serif;font-size:clamp(3rem,8.5vw,8rem);font-weight:900;line-height:.92;letter-spacing:-3px;color:var(--text);opacity:0;animation:fadeUp .8s 2.2s ease forwards}
+.h-name em{font-style:italic;color:var(--accent);display:block}
+.h-roles{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.4rem;opacity:0;animation:fadeUp .8s 2.35s ease forwards}
+.h-role-chip{background:var(--bg2);border:1px solid var(--border);color:var(--muted);padding:5px 14px;border-radius:8px;font-size:.78rem;font-weight:500;transition:border-color .2s,background .45s}
+.h-role-chip:hover{border-color:var(--accent);color:var(--accent)}
+.h-tag{font-size:clamp(.88rem,1.6vw,1.08rem);color:var(--muted);font-weight:300;max-width:600px;line-height:1.85;margin-top:1.4rem;opacity:0;animation:fadeUp .8s 2.5s ease forwards}
+.h-tag strong{color:var(--text);font-weight:600}
+.h-ctas{display:flex;gap:.9rem;align-items:center;flex-wrap:wrap;margin-top:2.2rem;opacity:0;animation:fadeUp .8s 2.65s ease forwards}
+.btn-a{background:var(--accent);color:#fff;padding:13px 30px;border-radius:100px;font-weight:600;font-size:.88rem;text-decoration:none;box-shadow:0 6px 22px var(--accent-shadow);transition:transform .2s,box-shadow .2s}
+.btn-a:hover{transform:translateY(-2px);box-shadow:0 10px 30px var(--accent-shadow)}
+.btn-b{color:var(--text);padding:13px 30px;border-radius:100px;font-weight:500;font-size:.88rem;text-decoration:none;border:1.5px solid var(--border);transition:border-color .2s,transform .2s}
+.btn-b:hover{border-color:var(--accent);transform:translateY(-2px)}
+.h-scroll{position:absolute;bottom:2rem;left:5%;display:flex;align-items:center;gap:10px;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--dim);opacity:0;animation:fadeUp .6s 3s ease forwards}
+.sline{width:36px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;animation:grow 1s 3.2s ease forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+
+/* TICKER */
+.ticker-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;background:var(--bg2);transition:background .45s,border-color .45s}
+.ticker-track{display:flex;width:max-content;animation:tick 38s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+.ti{white-space:nowrap;padding:0 20px;font-family:monospace;font-size:.7rem;color:var(--dim);letter-spacing:1px}
+.ti span{color:var(--accent)}
+
+/* SECTIONS */
+section{padding:7rem 5%}
+.slbl{font-family:monospace;font-size:.68rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:12px}
+.slbl::after{content:'';flex:0 0 34px;height:1px;background:var(--accent)}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:var(--text)}
+.stitle em{font-style:italic;color:var(--accent)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.rev{opacity:0;transform:translateY(34px);transition:opacity .7s ease,transform .7s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
+
+/* ABOUT */
+#about{background:var(--bg2);transition:background .45s}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;margin-top:3rem}
+.atext p{color:var(--muted);line-height:1.9;font-size:1rem;margin-bottom:1.1rem}
+.atext p strong{color:var(--text);font-weight:600}
+.roles{display:flex;flex-direction:column;gap:.85rem}
+.rrow{display:flex;align-items:center;justify-content:space-between;background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1rem 1.3rem;transition:border-color .3s,background .45s}
+.rrow:hover{border-color:var(--accent)}
+.rn{font-weight:600;font-size:.91rem;color:var(--text)}
+.rd{font-size:.74rem;color:var(--dim);margin-top:2px}
+.rico{width:40px;height:40px;border-radius:9px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.opp{margin-top:1.8rem;background:var(--accent-glow);border:1.5px solid var(--accent);border-radius:18px;padding:1.5rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1.4rem;flex-wrap:wrap}
+.opp h3{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.3rem}
+.opp p{font-size:.78rem;color:var(--muted)}
+.opp-pills{display:flex;gap:.7rem;flex-wrap:wrap}
+.opill{background:var(--accent);color:#fff;padding:7px 16px;border-radius:100px;font-size:.78rem;font-weight:700;box-shadow:0 4px 14px var(--accent-shadow);white-space:nowrap}
+
+/* SKILLS */
+#skills{background:var(--bg);transition:background .45s}
+.sk-grid-top{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.sk-grid-bottom{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:1.2rem}
+.skgrp{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:1.7rem;transition:border-color .3s,transform .3s,background .45s}
+.skgrp:hover{border-color:var(--accent);transform:translateY(-4px)}
+.skg-t{font-family:monospace;font-size:.67rem;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{background:var(--accent-glow);border:1px solid var(--accent);color:var(--accent-pale);padding:4px 11px;border-radius:100px;font-size:.74rem;font-weight:500;opacity:.85;transition:opacity .2s}
+.tag:hover{opacity:1}
+[data-theme="light"] .tag{color:var(--accent)}
+
+/* EXPERIENCE */
+#experience{background:var(--bg2);transition:background .45s}
+.tl{margin-top:3.5rem;position:relative;padding-left:1.8rem}
+.tl::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),transparent)}
+.tli{position:relative;padding-left:2rem;margin-bottom:3rem}
+.tldot{position:absolute;left:-1.8rem;top:5px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent-shadow);transform:translateX(-3px)}
+.tlp{font-family:monospace;font-size:.68rem;letter-spacing:1px;color:var(--accent);margin-bottom:.4rem}
+.tlr{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.14rem}
+.tlc{font-size:.83rem;color:var(--dim);margin-bottom:.7rem}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.tl-bullets li{color:var(--muted);font-size:.86rem;line-height:1.7;padding-left:1rem;position:relative}
+.tl-bullets li::before{content:'▹';position:absolute;left:0;color:var(--accent);font-size:.8rem}
+
+/* PROJECTS */
+#projects{background:var(--bg);transition:background .45s}
+.plist{margin-top:3.5rem;display:flex;flex-direction:column;gap:1.7rem}
+.pcard{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:2.2rem;display:grid;grid-template-columns:68px 1fr 28px;gap:1.7rem;align-items:start;transition:border-color .3s,transform .3s,background .45s;cursor:pointer}
+.pcard:hover{border-color:var(--accent);transform:translateX(6px)}
+.pnum{font-family:'Playfair Display',serif;font-size:2.7rem;font-weight:900;color:var(--border);line-height:1}
+.ptitle{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--text);margin-bottom:.55rem}
+.pdesc{color:var(--muted);font-size:.86rem;line-height:1.75;margin-bottom:1rem}
+.pmetrics{display:flex;gap:1.4rem;flex-wrap:wrap;margin-bottom:.9rem}
+.mv{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--accent)}
+.mk{font-size:.68rem;color:var(--dim);margin-top:1px}
+.ptags{display:flex;gap:6px;flex-wrap:wrap}
+.ptag{background:var(--bg3);color:var(--muted);padding:3px 9px;border-radius:6px;font-size:.71rem;font-weight:500;transition:background .45s}
+.parrow{color:var(--accent);font-size:1.2rem;transition:transform .2s;margin-top:2px}
+.pcard:hover .parrow{transform:translate(3px,-3px)}
+
+/* PUBLICATIONS */
+#publications{background:var(--bg2);transition:background .45s}
+.pub-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:3rem}
+.pub-card{background:var(--bg3);border:1px solid var(--border);border-radius:18px;padding:1.7rem;transition:border-color .3s,transform .3s,background .45s}
+.pub-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.pub-venue{font-family:monospace;font-size:.67rem;letter-spacing:1.5px;color:var(--accent);margin-bottom:.6rem;text-transform:uppercase}
+.pub-title{font-size:.96rem;font-weight:700;color:var(--text);line-height:1.4}
+.pub-link{display:inline-flex;align-items:center;gap:5px;margin-top:.8rem;font-size:.76rem;color:var(--accent);text-decoration:none;font-weight:500;transition:gap .2s}
+.pub-link:hover{gap:9px}
+
+/* EDUCATION */
+#education{background:var(--bg);transition:background .45s}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:3rem}
+.ecard{background:var(--bg2);border:1px solid var(--border);border-radius:18px;padding:1.7rem;transition:border-color .3s,background .45s}
+.ecard:hover{border-color:var(--accent)}
+.ep{font-family:monospace;font-size:.67rem;letter-spacing:1.5px;color:var(--accent);margin-bottom:.7rem}
+.ed{font-size:.96rem;font-weight:700;color:var(--text);margin-bottom:.22rem}
+.es{font-size:.8rem;color:var(--dim);margin-bottom:.65rem}
+.en{font-size:.79rem;color:var(--muted);line-height:1.65}
+
+/* HOBBIES */
+#hobbies{background:var(--bg2);transition:background .45s}
+.hobbies-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:3rem}
+.hobby-card{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:2rem;transition:border-color .3s,transform .3s,background .45s}
+.hobby-card:hover{border-color:var(--accent);transform:translateY(-4px)}
+.hobby-icon{font-size:2rem;margin-bottom:1rem}
+.hobby-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;font-style:italic;color:var(--accent);margin-bottom:.5rem}
+.hobby-label{font-size:.68rem;font-family:monospace;letter-spacing:2px;text-transform:uppercase;color:var(--dim);margin-bottom:.7rem}
+.hobby-desc{font-size:.88rem;color:var(--muted);line-height:1.75}
+
+/* CONTACT */
+#contact{background:var(--bg);text-align:center;transition:background .45s}
+.c-inner{max-width:600px;margin:0 auto}
+.c-inner .slbl{justify-content:center}
+.c-inner .slbl::after{display:none}
+.csub{color:var(--muted);font-size:.96rem;line-height:1.85;margin:1.4rem 0 1.4rem}
+.csub strong{color:var(--text)}
+
+/* VIEW COUNTER */
+.view-counter{display:inline-flex;align-items:center;gap:8px;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:8px 20px;font-family:monospace;font-size:.8rem;color:var(--muted);margin-bottom:1.8rem;transition:background .45s,border-color .45s}
+.view-counter .vc-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 2s infinite;box-shadow:0 0 6px var(--accent)}
+.view-counter strong{color:var(--accent);font-size:.92rem}
+
+.bigbtn{display:inline-block;text-decoration:none;background:var(--accent);color:#fff;padding:15px 44px;border-radius:100px;font-weight:700;font-size:.93rem;box-shadow:0 8px 26px var(--accent-shadow);transition:transform .2s,box-shadow .2s}
+.bigbtn:hover{transform:translateY(-3px);box-shadow:0 14px 34px var(--accent-shadow)}
+.clinks{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:1.8rem}
+.clink{background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:1.2rem 1.4rem;text-decoration:none;color:var(--text);display:flex;align-items:center;gap:.9rem;transition:border-color .3s,transform .3s,background .45s;text-align:left}
+.clink:hover{border-color:var(--accent);transform:translateY(-3px)}
+.cico{width:38px;height:38px;border-radius:9px;background:var(--accent-glow);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.clbl{font-size:.7rem;color:var(--dim)}
+.cval{font-size:.84rem;font-weight:600;margin-top:2px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:1.7rem 5%;display:flex;align-items:center;justify-content:space-between;font-size:.76rem;color:var(--dim);transition:border-color .45s;background:var(--bg2)}
+footer a{color:var(--accent);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.sk-grid-top{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+  .about-grid,.edu-grid,.clinks,.pub-grid,.hobbies-grid{grid-template-columns:1fr;gap:1.5rem}
+  .pcard{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .opp{flex-direction:column}
+  #modeToggle{right:12px}
+  .sk-grid-top,.sk-grid-bottom{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="l-name">Saarang Govinda Rajan</div>
+  <div class="l-sub">Analyst · SDET · Data Scientist</div>
+  <div class="l-track"><div class="l-fill" id="lf"></div></div>
+  <div class="l-pct" id="lp">0%</div>
+</div>
+
+<!-- MODE TOGGLE -->
+<div id="modeToggle" title="Toggle light / dark mode">
+  <span class="t-icon t-sun">☀️</span>
+  <div class="t-line"></div>
+  <span class="t-icon t-moon">🌙</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <div class="nav-edu">🎓 <span>M.S. Information Science</span> · University of Wisconsin–Madison</div>
+    <div class="nav-status">
+      <div class="ndot"></div>Open · Summer Internship &amp; Fall Co-op 2026
+      <span class="nav-sep">·</span>📍 Open to Relocation
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Research</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#hobbies">Beyond Work</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li>
+      <div class="resume-dropdown" id="resumeDropdown">
+        <button class="resume-btn" id="resumeBtn">
+          Resume
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="resume-menu">
+          <a href="https://drive.google.com/file/d/1cE1AFjQtVYKQfZxNljz6hNWZ7flzgTn2/view?usp=share_link" target="_blank">
+            📊 <div><div>Analyst Resume</div><span>Data / Business Analyst</span></div>
+          </a>
+          <a href="https://drive.google.com/file/d/1xmV0JjkaDaBxpiih0pRNmwJEhUPGB0Tw/view?usp=share_link" target="_blank">
+            🧪 <div><div>SDET Resume</div><span>QA / Performance Engineer</span></div>
+          </a>
+          <a href="https://drive.google.com/file/d/10q3Z9Csc8zsyUXvOdpYQYDrBuYfRd6tx/view?usp=share_link" target="_blank">
+            🤖 <div><div>Data Scientist Resume</div><span>ML / AI Engineer</span></div>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="h-bg"></div>
+  <div class="h-grid"></div>
+  <div class="h-inner">
+    <div class="h-badges">
+      <div class="badge badge-fill"><span class="bdot"></span>Summer Internship 2026</div>
+      <div class="badge badge-ring"><span class="bdot"></span>Fall Co-op 2026</div>
+      <div class="badge badge-loc">📍 Madison, WI · Open to Relocation</div>
+    </div>
+    <h1 class="h-name">Saarang<br><em>Govinda Rajan</em></h1>
+    <div class="h-roles">
+      <span class="h-role-chip">📊 Analyst</span>
+      <span class="h-role-chip">🧪 Software Engineer in Test</span>
+      <span class="h-role-chip">🤖 Data Scientist</span>
+    </div>
+    <p class="h-tag">University of Wisconsin–Madison graduate student combining the <strong>technical rigor of a Senior Software Engineer</strong> with the <strong>analytical precision of a Data Scientist</strong>. Experienced in engineering large-scale datasets and deploying AI-driven monitoring solutions that drive organizational efficiency and system-wide stability.</p>
+    <div class="h-ctas">
+      <a href="#projects" class="btn-a">View My Work</a>
+      <a href="#contact" class="btn-b">Let's Talk →</a>
+    </div>
+  </div>
+  <div class="h-scroll"><div class="sline"></div>Scroll</div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="slbl">About Me</div>
+  <div class="about-grid rev">
+    <div>
+      <h2 class="stitle">Where <em>engineering</em><br>meets insight.</h2>
+      <div class="atext" style="margin-top:1.8rem">
+        <p>I'm a <strong>Quantitative Technologist</strong>, a rare blend of performance engineer, analyst, and data scientist. Currently pursuing my MS in Information Science at <strong>UW–Madison</strong> with a perfect 4.0 GPA, building on 4+ years of hands-on industry experience.</p>
+        <p>At <strong>NPCI</strong>, I engineered datasets simulating 10,000+ concurrent transactions and built real-time anomaly detection systems that kept India's national payments platform stable at peak load. At <strong>ArisGlobal</strong>, I turned raw operational data into <strong>$150K in annual savings</strong> through AI-driven dashboards and precision SQL optimization.</p>
+        <p>I don't just run analyses or write tests — I <strong>architect systems</strong> that are reliable, observable, and built to scale. Actively seeking Summer 2026 internship and Fall 2026 co-op roles where engineering rigor and analytical depth both matter.</p>
+      </div>
+    </div>
+    <div>
+      <div class="roles">
+        <div class="rrow"><div><div class="rn">Analyst / Business Analyst</div><div class="rd">SQL · Power BI · Tableau · AWS</div></div><div class="rico">📊</div></div>
+        <div class="rrow"><div><div class="rn">Software Engineer in Test</div><div class="rd">Gatling · LoadRunner · CI/CD · Jenkins</div></div><div class="rico">🧪</div></div>
+        <div class="rrow"><div><div class="rn">Data Scientist / AI Engineer</div><div class="rd">PyTorch · TensorFlow · Scikit-Learn · CV</div></div><div class="rico">🤖</div></div>
+        <div class="rrow"><div><div class="rn">Graduate Teaching Assistant</div><div class="rd">CS 252 @ UW–Madison · Jan 2026–Present</div></div><div class="rico">🎓</div></div>
+      </div>
+      <div class="opp rev">
+        <div><h3>Currently Available For</h3><p>Internship &amp; Co-op, US-based, Remote, or Relocation</p></div>
+        <div class="opp-pills">
+          <div class="opill">☀️ Summer 2026</div>
+          <div class="opill">🍂 Fall Co-op 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="slbl">What I Know</div>
+  <h2 class="stitle">Technical <em>competencies</em></h2>
+  <div class="sk-grid-top rev">
+    <div class="skgrp">
+      <div class="skg-t">💻 Programming Languages</div>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Java</span>
+        <span class="tag">JavaScript</span><span class="tag">Scala</span><span class="tag">C</span>
+        <span class="tag">C++</span><span class="tag">ANSI C</span><span class="tag">HTML5</span><span class="tag">CSS3</span>
+      </div>
+    </div>
+    <div class="skgrp">
+      <div class="skg-t">🧪 Testing & Performance</div>
+      <div class="tags">
+        <span class="tag">Gatling</span><span class="tag">LoadRunner</span><span class="tag">JMeter</span>
+        <span class="tag">Postman</span><span class="tag">REST API</span><span class="tag">STLC</span>
+        <span class="tag">Load &amp; Stress Testing</span><span class="tag">API Testing</span><span class="tag">CI/CD Integration</span>
+      </div>
+    </div>
+    <div class="skgrp">
+      <div class="skg-t">📊 Data & Analytics</div>
+      <div class="tags">
+        <span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Snowflake</span>
+        <span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">AWS QuickSight</span>
+        <span class="tag">Apache Kafka</span><span class="tag">Grafana</span><span class="tag">Dynatrace</span>
+      </div>
+    </div>
+    <div class="skgrp">
+      <div class="skg-t">🤖 AI / ML Frameworks</div>
+      <div class="tags">
+        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">Keras</span>
+        <span class="tag">Scikit-Learn</span><span class="tag">Transformers</span><span class="tag">OpenCV</span>
+        <span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Foundation Models</span>
+      </div>
+    </div>
+  </div>
+  <div class="sk-grid-bottom rev">
+    <div class="skgrp">
+      <div class="skg-t">☁️ Cloud & DevOps</div>
+      <div class="tags">
+        <span class="tag">AWS</span><span class="tag">RedHat OpenShift</span><span class="tag">Docker</span>
+        <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">CI/CD</span>
+        <span class="tag">CloudWatch</span><span class="tag">S3</span><span class="tag">Jenkins</span>
+        <span class="tag">Maven</span><span class="tag">Gradle</span><span class="tag">IntelliJ</span><span class="tag">Autosys</span>
+      </div>
+    </div>
+    <div class="skgrp">
+      <div class="skg-t">🧠 Core Skills</div>
+      <div class="tags">
+        <span class="tag">Statistical Analysis</span><span class="tag">Predictive Modeling</span>
+        <span class="tag">Data Modeling</span><span class="tag">Root Cause Analysis</span>
+        <span class="tag">System Design</span><span class="tag">OOP</span>
+        <span class="tag">Agile / SDLC</span><span class="tag">Production Deployment</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="slbl">Career</div>
+  <h2 class="stitle">Where I've <em>worked</em></h2>
+  <div class="tl rev">
+    <div class="tli">
+      <div class="tldot"></div>
+      <div class="tlp">Jan 2026 – Present</div>
+      <div class="tlr">Graduate Teaching Assistant — CS 252</div>
+      <div class="tlc"><a href="https://www.wisc.edu" target="_blank" style="color:var(--accent);text-decoration:none">University of Wisconsin–Madison</a> · Madison, WI</div>
+      <ul class="tl-bullets">
+        <li>Supporting 300+ students in Introduction to Computer Engineering through office hours and help sessions, clarifying lecture concepts and guiding homework expectations.</li>
+        <li>Assisting with course administration, grading, and monitoring online platforms.</li>
+      </ul>
+    </div>
+    <div class="tli">
+      <div class="tldot"></div>
+      <div class="tlp">Apr 2024 – Aug 2025</div>
+      <div class="tlr">Senior Software Engineer</div>
+      <div class="tlc"><a href="https://www.npci.org.in" target="_blank" style="color:var(--accent);text-decoration:none">National Payment Corporation India (NPCI)</a> · Hyderabad, Telangana</div>
+      <ul class="tl-bullets">
+        <li>Engineered large-scale datasets simulating <strong>10,000+ concurrent users</strong> for statistical and ML analysis, predicting system scalability limits and ensuring platform stability during peak transaction periods.</li>
+        <li>Designed Grafana dashboards using time-series analytics to identify latency patterns and perform anomaly detection, directly improving system responsiveness and operational reliability.</li>
+        <li>Developed and executed high-load performance test scripts using Gatling (Scala/Java), validating throughput, response time, and error rates, improving system scalability by <strong>35%</strong>.</li>
+        <li>Integrated performance testing into CI/CD pipelines with Maven, Gradle, and Jenkins, optimizing test execution time by <strong>50%</strong> and reducing manual intervention through predictive incident forecasting.</li>
+      </ul>
+    </div>
+    <div class="tli">
+      <div class="tldot"></div>
+      <div class="tlp">Feb 2022 – Feb 2024</div>
+      <div class="tlr">Software Engineer</div>
+      <div class="tlc">ArisGlobal Software Private Limited · Bangalore, Karnataka</div>
+      <ul class="tl-bullets">
+        <li>Architected AI-driven analytics dashboards using Power BI, AWS, and QuickSight with predictive cost models delivering <strong>$150K in annual operational savings</strong>.</li>
+        <li>Developed LoadRunner performance test scripts in ANSI C for Web, Web Services, and mobile protocols, identifying CPU, memory, and network bottlenecks and enhancing application performance by <strong>25%</strong>.</li>
+        <li>Optimized SQL stored procedures with advanced indexing and query tuning, automating removal of <strong>20,000+ redundant records</strong> per cycle and reducing query latency by 25%.</li>
+        <li>Collaborated across all SDLC phases translating Agile User Stories into technical specifications ensuring <strong>100% alignment with business objectives</strong>.</li>
+      </ul>
+    </div>
+    <div class="tli">
+      <div class="tldot"></div>
+      <div class="tlp">Oct 2021 – Nov 2021</div>
+      <div class="tlr">Software Developer Intern</div>
+      <div class="tlc">Hloov · Dubai, United Arab Emirates</div>
+      <ul class="tl-bullets">
+        <li>Applied IFC.js, a JavaScript library, to parse and load Industry Foundation Classes (IFC) models, a fundamental file format in construction, facilitating seamless data integration.</li>
+        <li>Leveraged Building Information Modeling (BIM) technologies to craft dynamic 3D visualizations for interactive exploration of building elements and properties online.</li>
+      </ul>
+    </div>
+    <div class="tli">
+      <div class="tldot"></div>
+      <div class="tlp">Aug 2020 – Dec 2020</div>
+      <div class="tlr">Machine Learning Intern</div>
+      <div class="tlc">Excelsoft Technologies Private Limited · Mysore, Karnataka</div>
+      <ul class="tl-bullets">
+        <li>Led end-to-end development of a Naive Bayes predictive model to forecast heart disease risk, managing the full data lifecycle from preprocessing and feature engineering to model validation.</li>
+        <li>Deployed a healthcare analytics solution achieving <strong>95% model accuracy</strong> to support data-driven medical forecasting.</li>
+      </ul>
+    </div>
+    <div class="tli">
+      <div class="tldot"></div>
+      <div class="tlp">Jan 2020 – Feb 2020</div>
+      <div class="tlr">Programming Intern</div>
+      <div class="tlc"><a href="https://www.larsentoubro.com" target="_blank" style="color:var(--accent);text-decoration:none">Larsen &amp; Toubro Limited (L&amp;T)</a> · Mysore, Karnataka</div>
+      <ul class="tl-bullets">
+        <li>Developed a Power Consumption Alert System using Arduino, ESP8266, and GSM SIM900 for smart electricity monitoring and real-time threshold-based alerts.</li>
+        <li>Programmed resource-efficient embedded systems in C to process and store power data, optimizing memory usage and execution speed for a high-availability IoT architecture.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="slbl">Selected Work</div>
+  <h2 class="stitle">Projects that <em>shipped</em></h2>
+  <div class="plist">
+    <div class="pcard rev">
+      <div class="pnum">01</div>
+      <div>
+        <div class="ptitle">Social Distancing &amp; Face Mask Detection using CNN — IEEE Paper</div>
+        <div class="pdesc">Built a MobileNetV2-based CNN model using Python, TensorFlow, and Keras for real-time face mask compliance and social distancing monitoring. Implemented Euclidean Distance multi-object tracking with OpenCV and automated alerting for scalable public health monitoring.</div>
+        <div class="pmetrics">
+          <div><div class="mv">96%</div><div class="mk">Detection accuracy</div></div>
+          <div><div class="mv">Real-time</div><div class="mk">Bounding box inference</div></div>
+          <div><div class="mv">IEEE</div><div class="mk">Published</div></div>
+        </div>
+        <div class="ptags"><span class="ptag">Python</span><span class="ptag">TensorFlow</span><span class="ptag">Keras</span><span class="ptag">OpenCV</span><span class="ptag">MobileNetV2</span><span class="ptag">Transfer Learning</span></div>
+      </div>
+      <div class="parrow">↗</div>
+    </div>
+    <div class="pcard rev">
+      <div class="pnum">02</div>
+      <div>
+        <div class="ptitle">Performance Test Automation for NPCI</div>
+        <div class="pdesc">Developed and executed high-load performance test scripts using Gatling (Scala/Java) simulating 10,000+ concurrent virtual users, validating throughput, response time, and error rates. Integrated into CI/CD pipelines with real-time Grafana monitoring dashboards.</div>
+        <div class="pmetrics">
+          <div><div class="mv">10K+</div><div class="mk">Virtual users</div></div>
+          <div><div class="mv">+35%</div><div class="mk">Scalability improvement</div></div>
+          <div><div class="mv">-50%</div><div class="mk">Test execution time</div></div>
+        </div>
+        <div class="ptags"><span class="ptag">Gatling</span><span class="ptag">Scala</span><span class="ptag">Jenkins</span><span class="ptag">Grafana</span><span class="ptag">CI/CD</span><span class="ptag">JMeter</span></div>
+      </div>
+      <div class="parrow">↗</div>
+    </div>
+    <div class="pcard rev">
+      <div class="pnum">03</div>
+      <div>
+        <div class="ptitle">AI-Driven Analytics Dashboard at ArisGlobal</div>
+        <div class="pdesc">Architected predictive cost models and trend analysis dashboards using Power BI, AWS, and QuickSight. Integrated automated ETL data ingestion pipelines with SQL optimization delivering measurable operational savings and reduced reporting overhead.</div>
+        <div class="pmetrics">
+          <div><div class="mv">$150K</div><div class="mk">Annual savings</div></div>
+          <div><div class="mv">-25%</div><div class="mk">Query latency</div></div>
+          <div><div class="mv">20K+</div><div class="mk">Records optimized/cycle</div></div>
+        </div>
+        <div class="ptags"><span class="ptag">Power BI</span><span class="ptag">AWS QuickSight</span><span class="ptag">SQL</span><span class="ptag">ETL</span><span class="ptag">Snowflake</span></div>
+      </div>
+      <div class="parrow">↗</div>
+    </div>
+    <div class="pcard rev">
+      <div class="pnum">04</div>
+      <div>
+        <div class="ptitle">Inventory Management System — Open Source Club VVCE</div>
+        <div class="pdesc">Developed a responsive web application for the Open Source Club using MySQL, JavaScript, HTML5, and CSS3 with structured data management and client-server interactions. Facilitated efficient data collection and generation of analytics-ready datasets for administrative use.</div>
+        <div class="pmetrics">
+          <div><div class="mv">Full-stack</div><div class="mk">Web application</div></div>
+          <div><div class="mv">100%</div><div class="mk">Data integrity</div></div>
+        </div>
+        <div class="ptags"><span class="ptag">MySQL</span><span class="ptag">JavaScript</span><span class="ptag">HTML5</span><span class="ptag">CSS3</span><span class="ptag">REST API</span></div>
+      </div>
+      <div class="parrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="slbl">Research</div>
+  <h2 class="stitle">Published <em>work</em></h2>
+  <div class="pub-grid rev">
+    <div class="pub-card">
+      <div class="pub-venue">📄 IEEE Xplore</div>
+      <div class="pub-title">Monitoring of Social Distancing and Face Mask using CNN</div>
+      <a href="https://ieeexplore.ieee.org/document/9645748" target="_blank" class="pub-link">View on IEEE Xplore →</a>
+    </div>
+    <div class="pub-card">
+      <div class="pub-venue">📄 IJCTT</div>
+      <div class="pub-title">A Survey on Emerging Viruses — International Journal of Computer Trends and Technology</div>
+      <a href="https://ijcttjournal.org/archives/ijctt-v69i4p110" target="_blank" class="pub-link">View Publication →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="slbl">Education</div>
+  <h2 class="stitle">Academic <em>foundation</em></h2>
+  <div class="edu-grid rev">
+    <div class="ecard">
+      <div class="ep">Sep 2025 – Expected May 2027</div>
+      <div class="ed">M.S. Information Science</div>
+      <div class="es"><a href="https://www.wisc.edu" target="_blank" style="color:var(--accent);text-decoration:none">University of Wisconsin–Madison</a> · GPA: 4.0</div>
+      <div class="en">Coursework: Big Data Analytics, Data Visualization in Decision Making, Database Design for Information Professionals, Python Programming.</div>
+    </div>
+    <div class="ecard">
+      <div class="ep">Sep 2017 – Aug 2021</div>
+      <div class="ed">B.E. Computer Science &amp; Engineering</div>
+      <div class="es"><a href="https://vtu.ac.in" target="_blank" style="color:var(--accent);text-decoration:none">Visvesvaraya Technological University</a>, Mysore · GPA: 3.2</div>
+      <div class="en">Coursework: Data Structures &amp; Algorithms, Machine Learning, Neural Networks, Operating Systems, Computer Networks, Cloud Computing, Linear Algebra &amp; Statistics.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOBBIES -->
+<section id="hobbies">
+  <div class="slbl">Beyond Work</div>
+  <h2 class="stitle">The human <em>side</em></h2>
+  <div class="hobbies-grid rev">
+    <div class="hobby-card">
+      <div class="hobby-icon">✈️</div>
+      <div class="hobby-label">Hobby 01</div>
+      <div class="hobby-title">"The World is My Standup Meeting"</div>
+      <p class="hobby-desc">From Mysore to Madison — I've learned that the best perspective shifts come from dashboards &amp; also boarding passes. Every new city rewires how I think.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">📈</div>
+      <div class="hobby-label">Hobby 02</div>
+      <div class="hobby-title">"Bullish on Learning"</div>
+      <p class="hobby-desc">I follow markets the way I follow system logs obsessively. Whether it's macro trends, equity analysis, or just understanding how money moves, finance is my off-hours rabbit hole.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🧠</div>
+      <div class="hobby-label">Hobby 03</div>
+      <div class="hobby-title">"Always in Beta"</div>
+      <p class="hobby-desc">I have a compulsive need to understand things like geopolitics, emerging tech, scientific breakthroughs, world events. If something is happening in the world, I want to know the why behind it. Consider me permanently enrolled in the school of everything.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🍳</div>
+      <div class="hobby-label">Hobby 04</div>
+      <div class="hobby-title">"Debugging, But Make It Delicious"</div>
+      <p class="hobby-desc">To me, cooking is essentially engineering with a more delicious ROI. I view every recipe as a system ripe for optimization, iterating on ingredients and fine-tuning the timing until the entire process reaches peak performance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="c-inner">
+    <div class="slbl">Contact</div>
+    <h2 class="stitle">Let's build <em>something</em></h2>
+    <p class="csub">
+      <strong>Quantitative Technologist | MSIS @ UW–Madison</strong><br>
+      Targeting Summer 2026 Internship and Fall 2026 Co-op opportunities. Bridging the gap between Software Engineering rigor and Analytical depth to build reliable, data-driven systems. Available in Madison, WI or Remote. Open to relocation.
+    </p>
+    <div class="view-counter rev">
+      <div class="vc-dot"></div>
+      👁 <strong id="viewCount">...</strong> profile views
+    </div>
+    <a href="mailto:sgovindaraj3@wisc.edu" class="bigbtn">Say Hello →</a>
+    <div class="clinks rev">
+      <a href="mailto:sgovindaraj3@wisc.edu" class="clink">
+        <div class="cico">✉️</div><div><div class="clbl">Email</div><div class="cval">sgovindaraj3@wisc.edu</div></div>
+      </a>
+      <a href="https://www.linkedin.com/in/saarang-g-rajan" target="_blank" class="clink">
+        <div class="cico">💼</div><div><div class="clbl">LinkedIn</div><div class="cval">linkedin.com/in/saarang-g-rajan</div></div>
+      </a>
+      <a href="https://github.com/capsaarang" target="_blank" class="clink">
+        <div class="cico">🐙</div><div><div class="clbl">GitHub</div><div class="cval">github.com/capsaarang</div></div>
+      </a>
+      <a href="tel:+16089619057" class="clink">
+        <div class="cico">📱</div><div><div class="clbl">Phone</div><div class="cval">(608) 961-9057</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2025 Saarang Govinda Rajan · Analyst · SDET · Data Scientist</span>
+  <span>Open: <a href="#contact">Summer 2026 · Fall Co-op 2026</a></span>
+</footer>
+
+<script>
+// ── Loader ──
+(function(){
+  var lf=document.getElementById('lf');
+  var lp=document.getElementById('lp');
+  var ldr=document.getElementById('loader');
+  var pv=0; var done=false;
+  function finish(){if(done)return;done=true;clearInterval(iv);lf.style.width='100%';lp.textContent='100%';setTimeout(function(){ldr.classList.add('off');},400);}
+  var iv=setInterval(function(){pv+=Math.random()*14;if(pv>=100){finish();}else{lf.style.width=pv+'%';lp.textContent=Math.floor(pv)+'%';}},75);
+  setTimeout(finish,3000);
+})();
+
+// ── Ticker ──
+var skills=['Python','SQL','Gatling','Scikit-Learn','Power BI','Grafana','TensorFlow','AWS QuickSight','Jenkins','PyTorch','LoadRunner','Tableau','OpenCV','Apache Kafka','AWS','Dynatrace','Keras','PostgreSQL','CI/CD','Transformers','Docker','Java','Scala','REST API','NumPy','Pandas','IFC.js','BIM'];
+var track=document.getElementById('ticker');
+track.innerHTML=skills.concat(skills).map(function(s){return'<span class="ti"><span>✦</span> '+s+'</span>';}).join('');
+
+// ── Scroll reveal ──
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('vis');},i*65);obs.unobserve(e.target);}});
+},{threshold:.08});
+document.querySelectorAll('.rev').forEach(function(r){obs.observe(r);});
+
+// ── Dark/light toggle ──
+document.getElementById('modeToggle').addEventListener('click',function(){
+  var next=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+});
+
+// ── Resume dropdown ──
+var rd=document.getElementById('resumeDropdown');
+document.getElementById('resumeBtn').addEventListener('click',function(e){e.stopPropagation();rd.classList.toggle('open');});
+document.addEventListener('click',function(){rd.classList.remove('open');});
+
+// ── View counter (CountAPI) + log location (ipapi) ──
+(function(){
+  // Increment and display view count
+  fetch('https://api.countapi.xyz/hit/capsaarang.github.io/myportfolio')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var el=document.getElementById('viewCount');
+      if(el && d.value) el.textContent=d.value.toLocaleString();
+    })
+    .catch(function(){
+      var el=document.getElementById('viewCount');
+      if(el) el.textContent='—';
+    });
+
+  // Log visitor location to analytics page via localStorage
+  fetch('https://ipapi.co/json/')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      var visits=JSON.parse(localStorage.getItem('sgr_visits')||'[]');
+      visits.push({
+        time: new Date().toISOString(),
+        country: d.country_name||'Unknown',
+        region: d.region||'Unknown',
+        city: d.city||'Unknown',
+        lat: d.latitude,
+        lng: d.longitude
+      });
+      // Keep last 500 visits
+      if(visits.length>500) visits=visits.slice(-500);
+      localStorage.setItem('sgr_visits',JSON.stringify(visits));
+    })
+    .catch(function(){});
+})();
+</script>
+</body>
+</html>
